@@ -21,7 +21,14 @@ import sys
 _BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(_BASE_DIR, "Numeric Aptitude"))
 sys.path.append(os.path.join(_BASE_DIR, "Verbal Reasoning"))
-sys.path.append(os.path.join(_BASE_DIR, "Non-verbal Reasoning"))
+try:
+    import non_verbal_solver as nvs
+    st.write("✅ non_verbal_solver imported")
+except Exception as e:
+    import traceback
+    st.error(str(e))
+    st.code(traceback.format_exc())
+    st.stop()
 
 import pandas as pd
 import streamlit as st

@@ -5,3 +5,5 @@ ollama
 sentence-transformers
 scikit-learn
 numpy
+torch
+pillow
